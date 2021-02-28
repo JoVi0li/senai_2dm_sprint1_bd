@@ -1,0 +1,16 @@
+CREATE DATABASE filmes;
+
+USE filmes;
+
+CREATE TABLE generos
+(
+	idGenero	TINYINT PRIMARY KEY IDENTITY
+	,Nome		VARCHAR(200) NOT NULL
+);
+
+CREATE TABLE filmes
+(
+	idFilme		TINYINT	PRIMARY	KEY	IDENTITY
+	,idGenero	TINYINT	FOREIGN KEY	REFERENCES generos (idGenero)
+	,Titulo		VARCHAR(150) NOT NULL
+);
