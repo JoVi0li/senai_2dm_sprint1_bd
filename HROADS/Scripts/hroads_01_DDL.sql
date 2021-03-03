@@ -15,17 +15,19 @@ CREATE TABLE Habilidades
 	,NomeHabilidade VARCHAR(200) NOT NULL 
 );
 
-CREATE TABLE Classes
-(
-	idClasse INT PRIMARY KEY IDENTITY
-	,idHabilidade INT FOREIGN KEY REFERENCES Habilidades(idHabilidade)
-	,NomeClasse VARCHAR(200) NOT NULL 
-);
+
 
 CREATE TABLE HabilidadeClasses
 (
-	idClasse INT FOREIGN KEY REFERENCES Classes(idClasse)
+	idHabilidadeClasses INT PRIMARY KEY IDENTITY
+	,idClasse INT FOREIGN KEY REFERENCES Classes(idClasse)
 	,idHabilidade INT FOREIGN KEY REFERENCES Habilidades(idHabilidade)
+);
+
+CREATE TABLE Classes
+(
+	idClasse INT PRIMARY KEY IDENTITY
+	,NomeClasse VARCHAR(200) NOT NULL 
 );
 
 CREATE TABLE Personagens
@@ -33,4 +35,8 @@ CREATE TABLE Personagens
 	idPersonagem INT PRIMARY KEY IDENTITY
 	,idClasse INT FOREIGN KEY REFERENCES Classes(idClasse)
 	,NomePersonagem VARCHAR(200) NOT NULL
+	,CapacidadeMaximaVida VARCHAR(4)NOT NULL
+	,CapacidadeMaximaMana VARCHAR(4)NOT NULL
+	,DataAtualizacao VARCHAR(10)NOT NULL
+	,DataCriacao VARCHAR(10)NOT NULL
 );
