@@ -1,12 +1,13 @@
+
 USE SENAI_HROADS_MANHA;
 
-INSERT TipoHabilidade(NomeTipoHabilidade)
+INSERT INTO TipoHabilidade(NomeTipoHabilidade)
 VALUES		('Ataque')
 			,('Defesa')
 			,('Cura')
 			,('Magia');
 
-INSERT Habilidades(idTipoHabilidade,NomeHabilidade)
+INSERT INTO Habilidades(idTipoHabilidade,NomeHabilidade)
 VALUES		(1,'Lança Mortal')
 			,(2,'Escudo Supremo')
 			,(3,'Recuperar Vida');
@@ -15,7 +16,7 @@ VALUES		(1,'Lança Mortal')
 
 
 
-INSERT HabilidadeClasses(idClasse,idHabilidade)
+INSERT INTO HabilidadeClasses(idClasse,idHabilidade)
 VALUES		(1,1)
 			,(1,2)
 			,(2,2)
@@ -26,7 +27,7 @@ VALUES		(1,1)
 			,(6,3)
 			,(7,null);
 
-INSERT Classes(NomeClasse)
+INSERT INTO Classes(NomeClasse)
 VALUES		('Bárbaro')
 			,('Cruzado')
 			,('Caçadora de Demônios')
